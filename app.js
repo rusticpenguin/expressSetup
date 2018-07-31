@@ -13,7 +13,7 @@ app.get("/",(req, res, next) => {
 
 
 app.get("/:id",(req, res, next) => {
-    console.log(req)
+    console.log(req.params)
     res.json(cohortsData[req.params.id])
 });
 
