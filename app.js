@@ -23,7 +23,7 @@ app.get("/",(req, res, next) => {
 
 
 app.get("/:id",(req, res, next) => {
-    let cohort = findByID(req.params.id, cohortsData);
+    const cohort = findByID(req.params.id, cohortsData);
     res.json(cohort);
 });
 
