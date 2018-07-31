@@ -3,11 +3,12 @@ const app = express();
 const bodyParser = require("body-parser");
 const port = 9000;
 const cors = require("cors");
+const cohortsData = require("cohorts.js")
 
 app.use(cors())
 
 app.get("/",(req, res, next) => {
-    res.send(`yo nerd`)
+    res.json(cohortsData)
 })
 
 app.listen(port,() => {
