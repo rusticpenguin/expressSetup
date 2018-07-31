@@ -13,6 +13,7 @@ app.get("/",(req, res, next) => {
 
 
 app.get("/1",(req, res, next) => {
+    console.log(req)
     res.json(cohortsData[0])
 });
 
