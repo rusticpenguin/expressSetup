@@ -7,14 +7,25 @@ const cohortsData = require("./cohorts.js")
 
 app.use(cors());
 
+const findByID = (params, data) => {
+    for(let i = 0; i < data.length; i++) {
+        let holderString = data[i].id.toString();
+        if (params === holderString) {
+            console.log(data[i]);
+            return data[i];
+        };
+    };
+    return null;
+}
+
 app.get("/",(req, res, next) => {
     res.json(cohortsData)
 });
 
 
 app.get("/:id",(req, res, next) => {
-    console.log(req.params)
-    res.json(cohortsData[req.params.id])
+    let cohort = findByID(req.params.id, cohortsData);
+    res.json(cohort);
 });
 
 app.listen(port,() => {
