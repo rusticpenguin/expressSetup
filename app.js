@@ -11,7 +11,6 @@ const findByID = (params, data) => {
     for(let i = 0; i < data.length; i++) {
         let holderString = data[i].id.toString();
         if (params === holderString) {
-            console.log(data[i]);
             return data[i];
         };
     };
