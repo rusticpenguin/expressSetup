@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser");
 const port = 9000;
 const cors = require("cors");
 const cohortsData = require("./cohorts.js");
