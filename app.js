@@ -22,7 +22,15 @@ app.get("/",(req, res, next) => {
 
 app.get("/:id",(req, res, next) => {
     const cohort = findByID(req.params.id, cohortsData);
-    res.json(cohort);
+    if (cohort){
+        res.json(cohort);
+    } else {
+        res.json({
+            error: {
+                "message": "No record found, nerd"
+            }
+        });
+    };
 });
 
 app.listen(port,() => {
